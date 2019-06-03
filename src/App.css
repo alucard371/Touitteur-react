@@ -1,33 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Germania+One');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan|ZCOOL+XiaoWei');
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    background: #666553 url("./65960.png") repeat fixed center;
+    font-family: 'Germania One', cursive;
+}
+
+h1 {
+    font-family: 'Baloo Chettan', cursive;
+}
+
+header {
+    margin: 20px;
+}
+
+header h1 {
+    color: #2a2a2a;
+    font-family: Helvetica, Consolas, monospace;
+    font-size: 4rem;
+    letter-spacing: 1.4rem;
+    margin: 0px;
+    text-align: center;
+}
+
+header p {
+    color: #828282;
+    margin: 0px;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-container {
+    align-items: stretch;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+}
+
+.form-container input {
+    font-family: 'ZCOOL XiaoWei', serif;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 1em;
+    margin: 0px 4px;
+    padding: 10px;
+}
+
+.form-container input[type=submit] {
+    background-color: #A68E74;
+    cursor: pointer;
+    flex: 1;
+}
+
+.form-container input[type=text] {
+    background: linear-gradient(135deg, darkgrey 30%, dimgrey 70%);
+}
+
+.form-container input[type=text]:hover {
+    background: linear-gradient(100deg, dimgrey 30%, darkgrey 70%);
+    animation-delay: 250ms;
+    animation-duration: 700ms;
+    animation-name: masuperanimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.form-container input[type=submit]:hover {
+    background-color: #A68E74;
+}
+
+.form-item-name {
+    flex: 1;
+}
+
+.form-item-message {
+    flex: 10;
+}
+
+.submit,
+input {
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.22);
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px 40px;
+    position: relative;
+    transition: background-color 200ms, font-weight 1s, padding 300ms;
+}
+
+.touit-container {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 55%;
+}
+
+.trend-container {
+    width: 25%;
+    align-content: baseline;
+}
+
+.touit-item {
+    animation: touit-appear 2.5s 1;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.22);
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px 40px;
+    position: relative;
+    transition: background-color 200ms, font-weight 1s, padding 300ms;
+}
+
+.touit-item:hover,
+.submit:hover {
+    animation-delay: 250ms;
+    animation-duration: 700ms;
+    animation-name: masuperanimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.touit-item:nth-child(3n+0) {
+    background-color: #A68E74;
+}
+
+.touit-item:nth-child(3n+1) {
+    background-color: #666553;
+}
+
+.touit-item:nth-child(3n+2) {
+    background-color: #7E7E72;
+}
+
+.touit-item:hover p {
+    font-weight: bold;
+}
+
+.touit-item span {
+    bottom: 5px;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    margin: 0px;
+    position: absolute;
+    right: 5px;
+    text-align: right;
+}
+
+
+/* Animations */
+
+@keyframes touit-appear {
+    from {
+        color: rgba(255, 255, 255, 0);
+        max-width: 0%;
+        opacity: 0.9;
+        white-space: nowrap;
+    }
+    to {
+        color: rgba(255, 255, 255, 1);
+        max-width: 100%;
+        opacity: 1;
+        white-space: normal;
+    }
+}
+
+@keyframes masuperanimation {
+    0% {
+        transform: rotate(-2deg);
+        box-shadow: 2px 2px 2px 1px rgba(8, 8, 46, 0.2);
+        opacity: 0.8;
+        z-index: initial;
+        text-shadow: 0 0 3px #A68E74, 0 0 5px #666553;
+    }
+    100% {
+        transform: rotate(2deg);
+        box-shadow: 6px 6px 2px 1px rgba(1, 1, 14, 0.2);
+        opacity: 1;
+        z-index: 1;
+        text-shadow: 0 0 3px #666553, 0 0 5px #A68E74;
+    }
 }
